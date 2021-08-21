@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="container">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="assets/bootstrap.svg"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt="Logo"
+          />
+          ReactApp
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-info" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-info" href="profile.html">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <h1>Users</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-3 mb-2">
+          <li
+            class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-start
+            "
+          >
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Name:</div>
+              <div>username:</div>
+              <div>email:</div>
+              <div class="fw-bold">Adress</div>
+              <div>street:</div>
+              <div>suite:</div>
+              <div>city:</div>
+              <div>zipcode:</div>
+              <div>geo:</div>
+              <div>lat:</div>
+              <div>ing:</div>
+              <div>phone:</div>
+              <div>website:</div>
+              <div class="fw-bold">Company</div>
+              <div>name:</div>
+              <div>catchPhrase:</div>
+              <div>bs:</div>
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Modify username
+            </button>
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Active username
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="new-username" class="col-form-label"
+                          >New username:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="new-username"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

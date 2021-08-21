@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/bootstrap.svg";
 
 export function Menu() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
-        <a className="navbar-brand" href="index.html">
+        <Link className="navbar-brand" to="/">
           <img
             src={logo}
             width="30"
@@ -13,12 +14,12 @@ export function Menu() {
             alt="Logo"
           />
           ReactApp
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#main-nav"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
           aria-controls="main-nav"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -28,14 +29,9 @@ export function Menu() {
         <div className="collapse navbar-collapse" id="main-nav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active text-info" href="index.html">
+              <Link className="nav-link active text-info" to="/">
                 Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-info" href="profile.html">
-                Profile
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

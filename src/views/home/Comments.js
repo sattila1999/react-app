@@ -1,13 +1,13 @@
 export function Comments({ post, comments }) {
-  const postId = post.id;
-  return (
+  return !post ? null : (
     <div className="col">
-      <h3 className="mt-3 mb-3">Commnets of {post.title}</h3>
+      <h3 className="mt-3 mb-3">Commnets of "{post.title}"</h3>
       {comments.map((comment) => {
-        if (postId === comment.postId) {
+        if (post.id === comment.postId) {
           return (
             <li
               className="
+              mb-3
               list-group-item
               d-flex
               justify-content-between
