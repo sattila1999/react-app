@@ -1,12 +1,15 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { UsersContext } from "../../state/UsersProvider";
+import { updateUser } from "../../state/users/actions";
 import { UserForm } from "./UserForm";
 
 export function Profile() {
   const { userId } = useParams();
 
-  const { users, editUsername } = useContext(UsersContext);
+  const users = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+
   const postCreator = users.find((user) => user.id === parseInt(userId));
   const [show, setShow] = useState(false);
 
@@ -15,7 +18,7 @@ export function Profile() {
     setShow(true);
   };
   const handleSubmit = (user) => {
-    editUsername(user);
+    dispatch(updateUser(user));
   };
 
   const defaultState = {
