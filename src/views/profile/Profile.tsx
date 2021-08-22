@@ -5,19 +5,19 @@ import { updateUser } from "../../state/users/actions";
 import { UserForm } from "./UserForm";
 
 export function Profile() {
-  const { userId } = useParams();
+  const { userId }: any = useParams();
 
-  const users = useSelector((state) => state.users);
+  const users = useSelector((state: { users: any }) => state.users);
   const dispatch = useDispatch();
 
-  const postCreator = users.find((user) => user.id === parseInt(userId));
+  const postCreator = users.find((user: any) => user.id === parseInt(userId));
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => {
     setShow(true);
   };
-  const handleSubmit = (user) => {
+  const handleSubmit = (user: any) => {
     dispatch(updateUser(user));
   };
 

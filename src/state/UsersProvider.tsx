@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
 import { exampleUsers } from "../domain/users";
 
-export const UsersContext = createContext();
+export const UsersContext = createContext({});
 
-export const UsersProvider = ({ children }) => {
+export const UsersProvider = ({ children }: any) => {
   const [users, setUsers] = useState(exampleUsers);
-  const editUsername = (user) => {
+  const editUsername = (user: any) => {
     setUsers(users.map((u) => (u.id === user.id ? user : u)));
   };
   const usersService = { users, setUsers, editUsername };

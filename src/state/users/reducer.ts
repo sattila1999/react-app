@@ -3,7 +3,7 @@ import { UPDATE_USER } from "./actions";
 
 const initialState = exampleUsers;
 
-export const usersReducer = (state = initialState, action) => {
+export const usersReducer = (state = initialState, action: any) => {
   const { type, payload } = action;
   const users = state;
 

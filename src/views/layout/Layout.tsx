@@ -1,6 +1,6 @@
 import { Menu } from "../menu/Menu";
 
-export function Layout({ children }) {
+export function Layout({ children }: any) {
   return (
     <div className="container">
       <Menu />

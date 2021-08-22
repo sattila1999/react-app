@@ -2,18 +2,18 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UsersContext } from "../../state/UsersProvider";
 
-export function Posts({ posts, selectedPostId }) {
-  const { users } = useContext(UsersContext);
+export function Posts({ posts, selectedPostId }: any) {
+  const { users }: any = useContext(UsersContext);
   return (
     <div className="col">
       <h3 className="mt-3 mb-3">Posts</h3>
-      {posts.map((post) => (
+      {posts.map((post: any) => (
         <div key={post.id}>
           <Link
             className="fw-bold text-warning badge bg-dark rounded-pill"
             to={`/profile/${post.userId}`}
           >
-            {users.find((user) => user.id === post.userId).name}
+            {users.find((user: any) => user.id === post.userId).name}
           </Link>
           <Link
             to={`/${post.id}`}

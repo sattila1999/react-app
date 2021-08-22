@@ -5,7 +5,10 @@ import { exampleComments } from "../../domain/comments";
 import { useParams } from "react-router-dom";
 
 export function Home() {
-  const { postId: postIdParam } = useParams();
+  interface ParamTypes {
+    postId: any;
+  }
+  const { postId: postIdParam } = useParams<ParamTypes>();
   const selectedPostId = Number.parseInt(postIdParam);
   const selectedPost = examplePosts.find((post) => post.id === selectedPostId);
   return (

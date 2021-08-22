@@ -8,7 +8,7 @@ export function UserForm({
   handleShow,
   handleClose,
   onSubmit,
-}) {
+}: any) {
   const [formState, setFormState] = useState(defaultState);
 
   useEffect(() => {
@@ -17,11 +17,11 @@ export function UserForm({
     }
   }, [show, defaultState]);
 
-  const handleChange = (name, value) => {
+  const handleChange = (name: any, value: any) => {
     setFormState({ ...formState, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     onSubmit(formState);
     handleClose();
