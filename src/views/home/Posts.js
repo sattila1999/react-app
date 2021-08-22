@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { exampleUsers } from "../../domain/users";
+import { UsersContext } from "../../state/UsersProvider";
 
-export function Posts({ posts, selectedPostId, onSelect }) {
+export function Posts({ posts, selectedPostId }) {
+  const { users } = useContext(UsersContext);
   return (
     <div className="col">
       <h3 className="mt-3 mb-3">Posts</h3>
@@ -11,7 +13,7 @@ export function Posts({ posts, selectedPostId, onSelect }) {
             className="fw-bold text-warning badge bg-dark rounded-pill"
             to={`/profile/${post.userId}`}
           >
-            {exampleUsers.find((user) => user.id === post.userId).name}
+            {users.find((user) => user.id === post.userId).name}
           </Link>
           <Link
             to={`/${post.id}`}

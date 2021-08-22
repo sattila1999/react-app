@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
-import { exampleUsers } from "../../domain/users";
+import { UsersContext } from "../../state/UsersProvider";
 import { UserForm } from "./UserForm";
 
 export function Profile() {
   const { userId } = useParams();
-  const [users, setUsers] = useState(exampleUsers);
+
+  const { users, editUsername } = useContext(UsersContext);
   const postCreator = users.find((user) => user.id === parseInt(userId));
   const [show, setShow] = useState(false);
 
@@ -14,7 +15,7 @@ export function Profile() {
     setShow(true);
   };
   const handleSubmit = (user) => {
-    setUsers(users.map((u) => (u.id === user.id ? user : u)));
+    editUsername(user);
   };
 
   const defaultState = {
